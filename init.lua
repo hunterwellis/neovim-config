@@ -1,6 +1,6 @@
-vim.g.mapleader = vim.keycode('<Space>')
+vim.g.mapleader = vim.keycode("<Space>")
 
-require('config.lazy')
-require('config.keymaps')
-require('config.options')
-
+require("utils")
+require("config.lazy")
+require("config.keymaps")
+require("config.options")

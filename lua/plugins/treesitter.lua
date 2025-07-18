@@ -8,8 +8,8 @@ return {
       local treesitter_configs = require("nvim-treesitter/configs")
       treesitter_configs.setup({
           ensure_installed = {
-            -- These are installed by default on Arch Linux through other packages
             "c",
+            "cpp",
             "lua",
             "markdown",
             "markdown_inline",
