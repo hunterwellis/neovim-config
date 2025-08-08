@@ -20,15 +20,15 @@ return {
 				css = { "prettier", stop_after_first = true },
 				latex = { "llf", stop_after_first = true },
 			},
-			format_on_save = function()
-				if vim.g.disable_autoformat then
-					return
-				end
-				return {
-					timeout_ms = 500,
-					lsp_format = "fallback",
-				}
-			end,
+			-- format_on_save = function()
+			-- 	if vim.g.disable_autoformat then
+			-- 		return
+			-- 	end
+			-- 	return {
+			-- 		timeout_ms = 500,
+			-- 		lsp_format = "fallback",
+			-- 	}
+			-- end,
 		})
 
 		-- auto format

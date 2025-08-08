@@ -12,6 +12,7 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
+					"tinymist",
 					"fortls",
 					-- "nil_ls",
 					"bashls",
@@ -39,7 +40,7 @@ return {
 					-- "hls",
 					-- "zls",
 					"marksman",
-					"sqlls",
+					-- "sqlls",
 					"wgsl_analyzer",
 					"texlab",
 					"intelephense",
@@ -111,9 +112,9 @@ return {
 			lspconfig.nil_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.sqlls.setup({
-				capabilities = capabilities,
-			})
+			-- lspconfig.sqlls.setup({
+			-- 	capabilities = capabilities,
+			-- })
 			lspconfig.intelephense.setup({
 				capabilities = capabilities,
 			})
