@@ -1,3 +1,4 @@
+-- status line config
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "echasnovski/mini.icons" },
@@ -16,12 +17,7 @@ return {
         lualine_c = { "filename" },
         lualine_x = {
           function()
-            local encoding = vim.o.fileencoding
-            if encoding == "" then
-              return vim.bo.fileformat .. " :: " .. vim.bo.filetype
-            else
-              return encoding .. " :: " .. vim.bo.fileformat .. " :: " .. vim.bo.filetype
-            end
+            return vim.bo.filetype
           end,
         },
         lualine_y = { "progress" },

@@ -4,7 +4,7 @@ return {
 	config = function()
 		require("mini.files").setup({
 			mappings = {
-				close = "<C-n>",
+				close = "<leader>n",
 				go_in = "l",
 				go_in_plus = "L",
 				go_out = "h",
@@ -19,6 +19,6 @@ return {
 				trim_right = ">",
 			},
 		})
-		vim.keymap.set("n", "<C-n>", ":lua MiniFiles.open()<CR>", { silent = true })
+		vim.keymap.set("n", "<leader>n", ":lua MiniFiles.open()<CR>", { silent = true })
 	end,
 }
