@@ -1,13 +1,5 @@
 local map = vim.keymap.set
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
-
--- Window navigation
-map("n", "<C-h>", ":wincmd h<CR>", { desc = "Navigate window left", silent = true })
-map("n", "<C-j>", ":wincmd j<CR>", { desc = "Navigate window down", silent = true })
-map("n", "<C-k>", ":wincmd k<CR>", { desc = "Navigate window up", silent = true })
-map("n", "<C-l>", ":wincmd l<CR>", { desc = "Navigate window right", silent = true })
-
 -- more error mappings
 vim.api.nvim_set_keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
