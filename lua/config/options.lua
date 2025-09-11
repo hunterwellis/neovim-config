@@ -36,7 +36,6 @@ set.sidescrolloff = 8
 set.guifont = "monospace:h17"
 set.whichwrap = "bs<>[]hl"
 
-vim.cmd("colorscheme lunaperche")
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins from neovim in case vim still in use
 
 -- Diagnostics Config
