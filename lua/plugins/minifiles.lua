@@ -19,6 +19,6 @@ return {
 				trim_right = ">",
 			},
 		})
-		vim.keymap.set("n", "<leader>n", ":lua MiniFiles.open()<CR>", { silent = true })
+		vim.keymap.set("n", "<leader>n", ":lua MiniFiles.open()<CR>", { desc = "File explorer"})
 	end,
 }

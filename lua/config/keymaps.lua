@@ -1,8 +1,6 @@
-local map = vim.keymap.set
-
 -- more error mappings
-vim.api.nvim_set_keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>",
+	{ desc = "Expand diagnostic" })
 -- jump to errors
 vim.keymap.set("n", "[e", function()
 	vim.diagnostic.jump({ count = -1, float = true })
