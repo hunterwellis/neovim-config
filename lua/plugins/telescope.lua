@@ -25,12 +25,37 @@ return {
 
 			-- Keymaps
 			vim.keymap.set("n", "<Leader>ff", function()
-				telescope_builtin.find_files{
+				telescope_builtin.find_files({
 					shorten_path = true,
 					previewer = false,
-				}
+				})
 			end, { desc = "Find file" })
 			vim.keymap.set("n", "<Leader>fw", telescope_builtin.live_grep, { desc = "Live grep" })
+			vim.keymap.set("n", "<leader>*", telescope_builtin.grep_string, { desc = "Grep word" })
+			vim.keymap.set("v", "<leader>*", function()
+				local start_pos = vim.fn.getpos("v")
+				local end_pos = vim.fn.getpos(".")
+				local line_start, col_start = start_pos[2], start_pos[3]
+				local line_end, col_end = end_pos[2], end_pos[3]
+
+				if line_start > line_end or (line_start == line_end and col_start > col_end) then
+					line_start, line_end = line_end, line_start
+					col_start, col_end = col_end, col_start
+				end
+
+				local lines = vim.fn.getline(line_start, line_end)
+				if #lines == 0 then
+					return
+				end
+
+				lines[#lines] = string.sub(lines[#lines], 1, col_end)
+				lines[1] = string.sub(lines[1], col_start)
+
+				local selection = table.concat(lines, "\n")
+				selection = selection:gsub("\n", " ")
+
+				telescope_builtin.live_grep({ default_text = selection })
+			end, { desc = "Grep visual" })
 			vim.keymap.set("n", "<Leader>b", function()
 				telescope_builtin.buffers({
 					shorten_path = true,
