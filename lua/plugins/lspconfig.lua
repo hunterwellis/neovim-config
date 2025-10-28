@@ -1,3 +1,4 @@
+vim.deprecate = function() end
 return {
 	{
 		"williamboman/mason.nvim",
@@ -25,7 +26,6 @@ return {
 					"cssls",
 					"emmet_language_server",
 					-- "htmx",
-					"tailwindcss",
 					"ts_ls",
 					"astro",
 					"ols",
@@ -91,7 +91,7 @@ return {
 				configs.roc_ls = {
 					default_config = {
 						cmd = { "roc_language_server", "--stdio" },
-						capabilties = capabilities,
+						capabilities = capabilities,
 						filetypes = {
 							"roc",
 						},
@@ -240,7 +240,7 @@ return {
 				configs.ts_ls = {
 					default_config = {
 						cmd = { "typescript-language-server", "--stdio" },
-						capabilties = capabilities,
+						capabilities = capabilities,
 						filetypes = {
 							"javascript",
 							"javascriptreact",
@@ -254,7 +254,7 @@ return {
 				}
 			end
 			lspconfig.ts_ls.setup({
-				capabilties = capabilities,
+				capabilities = capabilities,
 				cmd = { "typescript-language-server", "--stdio" },
 				filetypes = {
 					"javascript",
