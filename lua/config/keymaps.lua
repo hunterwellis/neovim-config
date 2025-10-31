@@ -1,8 +1,13 @@
--- more error mappings
 vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>",
   { desc = "Expand diagnostic" })
 vim.keymap.set("v", "<leader>n", ":norm ",
   { desc = "':norm' command" })
+
+-- sessions
+vim.keymap.set("n", "<leader>s", ":mksession .session.vim<CR>",
+	{ desc = "Save vim session (.session.vim)" })
+vim.keymap.set("n", "<leader>r", ":source .session.vim<CR>",
+	{ desc = "Revive vim session (.session.vim)" })
 
 -- jump to errors
 vim.keymap.set("n", "[e", function()
