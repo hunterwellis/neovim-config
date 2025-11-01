@@ -7,7 +7,7 @@ return {
       vim.fn["mkdp#util#install"]()
     end,
     init = function()
-      vim.g.mkdp_browser = "brave"
+      vim.g.mkdp_browser = "brave-browser"
       vim.g.mkdp_filetypes = { "markdown" }
     end,
   },

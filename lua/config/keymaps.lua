@@ -4,7 +4,7 @@ vim.keymap.set("v", "<leader>n", ":norm ",
   { desc = "':norm' command" })
 
 -- sessions
-vim.keymap.set("n", "<leader>s", ":mksession .session.vim<CR>",
+vim.keymap.set("n", "<leader>s", ":mksession! .session.vim<CR>",
 	{ desc = "Save vim session (.session.vim)" })
 vim.keymap.set("n", "<leader>r", ":source .session.vim<CR>",
 	{ desc = "Revive vim session (.session.vim)" })
