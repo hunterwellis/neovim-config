@@ -3,6 +3,10 @@ vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>",
 vim.keymap.set("v", "<leader>n", ":norm ",
   { desc = "':norm' command" })
 
+-- Esc is too far
+vim.keymap.set("i", "jj", "<Esc>")
+vim.keymap.set("i", "kk", "<Esc>")
+
 -- sessions
 vim.keymap.set("n", "<leader>s", ":mksession! .session.vim<CR>",
 	{ desc = "Save vim session (.session.vim)" })
