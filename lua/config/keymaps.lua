@@ -1,11 +1,16 @@
-vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>",
-  { desc = "Expand diagnostic" })
 vim.keymap.set("v", "<leader>n", ":norm ",
   { desc = "':norm' command" })
 
--- Esc is too far
-vim.keymap.set("i", "jj", "<Esc>")
-vim.keymap.set("i", "kk", "<Esc>")
+-- quickly parse/organize logs
+vim.keymap.set("x", "<leader>da", [["zy<Esc>:g/<C-R>z/d<CR>]],
+	{ desc = "delete all lines with visual selection" })
+vim.keymap.set("n", "<leader>da", [[ve"zy<Esc>:g/<C-R>z/d<CR>]],
+	{ desc = "delete all lines with word" })
+
+vim.keymap.set("x", "aleader>de", [["zy<Esc>:g!/<C-R>z/d<CR>:noh<CR>]],
+	{ desc = "delete all lines without visual selection" })
+vim.keymap.set("n", "<leader>de", [[ve"zy<Esc>:g!/<C-R>z/d<CR>:noh<CR>]],
+	{ desc = "delete all lines without word" })	
 
 -- sessions
 vim.keymap.set("n", "<leader>s", ":mksession! .session.vim<CR>",
@@ -13,7 +18,9 @@ vim.keymap.set("n", "<leader>s", ":mksession! .session.vim<CR>",
 vim.keymap.set("n", "<leader>r", ":source .session.vim<CR>",
 	{ desc = "Revive vim session (.session.vim)" })
 
--- jump to errors
+-- lsp errors
+vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>",
+  { desc = "Expand diagnostic" })
 vim.keymap.set("n", "[e", function()
 	vim.diagnostic.jump({ count = -1, float = true })
 end, { desc = "Jump to previous error" })
