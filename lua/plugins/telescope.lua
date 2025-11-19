@@ -31,7 +31,10 @@ return {
 				})
 			end, { desc = "Find file" })
 			vim.keymap.set("n", "<Leader>tw", telescope_builtin.live_grep, { desc = "Live grep" })
-			vim.keymap.set("n", "<leader>*", telescope_builtin.grep_string, { desc = "Grep word" })
+			vim.keymap.set("n", "<leader>*", function()
+					telescope_builtin.grep_string()
+					vim.api.nvim_input("<Esc>")
+			end, { desc = "Grep word" })
 			vim.keymap.set("v", "<leader>*", function()
 				local start_pos = vim.fn.getpos("v")
 				local end_pos = vim.fn.getpos(".")
@@ -55,6 +58,7 @@ return {
 				selection = selection:gsub("\n", " ")
 
 				telescope_builtin.live_grep({ default_text = selection })
+				vim.api.nvim_input("<Esc>")
 			end, { desc = "Grep visual" })
 			vim.keymap.set("n", "<Leader>tb", function()
 				telescope_builtin.buffers({
