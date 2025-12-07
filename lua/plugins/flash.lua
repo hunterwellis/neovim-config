@@ -12,7 +12,7 @@ return {
   },
   -- stylua: ignore
   keys = {
-    { "<leader>f", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+    { "<leader>ff", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
     { "<C-l>", mode = { "n", "x", "o", "c" }, function()
         local ok, flash = pcall(require, "flash")
         if ok and flash and flash.clear then
