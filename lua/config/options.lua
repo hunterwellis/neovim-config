@@ -1,4 +1,3 @@
-
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cmdheight = 1
@@ -76,4 +75,6 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
-vim.cmd("colorscheme lunaperche")
+vim.cmd("colorscheme retrobox")
+vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
+
