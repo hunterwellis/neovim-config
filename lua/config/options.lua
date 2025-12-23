@@ -76,4 +76,4 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
-vim.cmd("colorscheme koehler")
+vim.cmd("colorscheme lunaperche")
