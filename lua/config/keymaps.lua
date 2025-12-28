@@ -47,5 +47,5 @@ function ToggleColorColumn()
 	end
 end
 vim.api.nvim_create_user_command("ToggleColorColumn", ToggleColorColumn, {})
-vim.keymap.set("n", "<leader>cc", "<cmd>ToggleColorColumn<CR>",
+vim.keymap.set("n", "<leader>cc", ":ToggleColorColumn<CR>",
   { desc = "toggle colorcolumn" })

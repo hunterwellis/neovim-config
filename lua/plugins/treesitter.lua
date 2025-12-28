@@ -17,6 +17,7 @@ return {
             "query",
             "vim",
             "vimdoc",
+            "latex",
           },
           auto_install = true,
           highlight = {
