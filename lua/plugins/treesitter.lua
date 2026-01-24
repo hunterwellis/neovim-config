@@ -8,7 +8,6 @@ return {
       local treesitter_configs = require("nvim-treesitter/configs")
       treesitter_configs.setup({
           ensure_installed = {
-            "typst",
             "c",
             "cpp",
             "lua",
@@ -17,7 +16,6 @@ return {
             "query",
             "vim",
             "vimdoc",
-            "latex",
           },
           auto_install = true,
           highlight = {

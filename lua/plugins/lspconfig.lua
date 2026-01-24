@@ -13,7 +13,7 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
-					"tinymist",
+					-- "tinymist",
 					"fortls",
 					-- "nil_ls",
 					"bashls",
@@ -42,7 +42,7 @@ return {
 					"marksman",
 					-- "sqlls",
 					"wgsl_analyzer",
-					"texlab",
+					-- "texlab",
 					"intelephense",
 					"nim_langserver",
 				},
