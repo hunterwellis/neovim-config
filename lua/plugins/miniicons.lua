@@ -3,8 +3,8 @@ return {
 	version = '*',
   config = function()
     require("mini.icons").setup({
-      style = 'glyph',
-      -- style = 'ascii',
+      -- style = 'glyph',
+      style = 'ascii',
     })
   end,
 

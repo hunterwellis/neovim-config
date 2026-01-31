@@ -1,3 +1,4 @@
+-- quick normal mode command
 vim.keymap.set("v", "<leader>n", ":norm ",
   { desc = "':norm' command" })
 

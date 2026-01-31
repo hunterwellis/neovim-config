@@ -13,38 +13,16 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
-					-- "tinymist",
-					"fortls",
-					-- "nil_ls",
 					"bashls",
-					"omnisharp",
 					"cmake",
 					"lua_ls",
-					-- "gopls",
-					"templ",
 					"html",
 					"cssls",
-					"emmet_language_server",
-					-- "htmx",
-					"ts_ls",
-					"astro",
-					"ols",
-					-- "gdscript",
-					-- "tsserver",
 					"pylsp",
 					"clangd",
-					"prismals",
 					"yamlls",
 					"jsonls",
-					"eslint",
-					-- "hls",
-					-- "zls",
 					"marksman",
-					-- "sqlls",
-					"wgsl_analyzer",
-					-- "texlab",
-					"intelephense",
-					"nim_langserver",
 				},
 			})
 		end,
@@ -61,32 +39,6 @@ return {
 			lspconfig.cmake.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.fortls.setup({
-				capabilities = capabilities,
-				root_dir = require("lspconfig").util.root_pattern("*.f90"),
-			})
-			lspconfig.purescriptls.setup({
-				capabilities = capabilities,
-				filetypes = { "purescript" },
-				settings = {
-					purescript = {
-						addSpagoSources = true, -- e.g. any purescript language-server config here
-					},
-				},
-				flags = {
-					debounce_text_changes = 150,
-				},
-			})
-			lspconfig.ols.setup({
-				capabilities = capabilities,
-				root_dir = require("lspconfig").util.root_pattern("*.odin"),
-			})
-			lspconfig.ocamllsp.setup({
-				capabilities = capabilities,
-				cmd = { "ocamllsp", "--stdio" },
-				filetypes = { "ocaml", "reason" },
-				root_dir = require("lspconfig").util.root_pattern("*.opam", "esy.json", "package.json"),
-			})
 			if not configs.roc_ls then
 				configs.roc_ls = {
 					default_config = {
@@ -99,36 +51,6 @@ return {
 					},
 				}
 			end
-			lspconfig.roc_ls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.gdscript.setup({
-				capabilities = capabilities,
-				filetypes = { "gd", "gdscript", "gdscript3" },
-			})
-			lspconfig.astro.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.nil_ls.setup({
-				capabilities = capabilities,
-			})
-			-- lspconfig.sqlls.setup({
-			-- 	capabilities = capabilities,
-			-- })
-			lspconfig.intelephense.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.texlab.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.zls.setup({
-				capabilities = capabilities,
-				cmd = { "zls" },
-			})
-			lspconfig.hls.setup({
-				capabilities = capabilities,
-				single_file_support = true,
-			})
 			lspconfig.bashls.setup({
 				capabilities = capabilities,
 			})
@@ -152,19 +74,10 @@ return {
 					},
 				},
 			})
-			lspconfig.wgsl_analyzer.setup({
-				capabilities = capabilities,
-			})
 			lspconfig.jsonls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.gopls.setup({
-				capabilities = capabilities,
-			})
 			lspconfig.cssls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.prismals.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.yamlls.setup({
@@ -185,91 +98,6 @@ return {
 					"tsx",
 				},
 			})
-			lspconfig.htmx.setup({
-				capabilities = capabilities,
-				filetypes = { "html", "templ" },
-			})
-			lspconfig.emmet_language_server.setup({
-				capabilities = capabilities,
-				filetypes = {
-					"templ",
-					"html",
-					"css",
-					"php",
-					"javascriptreact",
-					"typescriptreact",
-					"javascript",
-					"typescript",
-					"jsx",
-					"tsx",
-				},
-			})
-			-- lspconfig.tailwindcss.setup({
-			-- 	capabilities = capabilities,
-			-- 	filetypes = {
-			-- 		"templ",
-			-- 		"html",
-			-- 		"css",
-			-- 		"javascriptreact",
-			-- 		"typescriptreact",
-			-- 		"javascript",
-			-- 		"typescript",
-			-- 		"jsx",
-			-- 		"tsx",
-			-- 	},
-			-- 	root_dir = require("lspconfig").util.root_pattern(
-			-- 		"tailwind.config.js",
-			-- 		"tailwind.config.cjs",
-			-- 		"tailwind.config.mjs",
-			-- 		"tailwind.config.ts",
-			-- 		"postcss.config.js",
-			-- 		"postcss.config.cjs",
-			-- 		"postcss.config.mjs",
-			-- 		"postcss.config.ts",
-			-- 		"package.json",
-			-- 		"node_modules",
-			-- 		".git"
-			-- 	),
-			-- })
-			lspconfig.templ.setup({
-				capabilities = capabilities,
-				filetypes = { "templ" },
-			})
-
-			if not configs.ts_ls then
-				configs.ts_ls = {
-					default_config = {
-						cmd = { "typescript-language-server", "--stdio" },
-						capabilities = capabilities,
-						filetypes = {
-							"javascript",
-							"javascriptreact",
-							"typescript",
-							"typescriptreact",
-							"html",
-						},
-						root_dir = require("lspconfig").util.root_pattern("package.json", "tsconfig.json", ".git"),
-						single_file_support = true,
-					},
-				}
-			end
-			lspconfig.ts_ls.setup({
-				capabilities = capabilities,
-				cmd = { "typescript-language-server", "--stdio" },
-				filetypes = {
-					"javascript",
-					"javascriptreact",
-					"typescript",
-					"typescriptreact",
-					"html",
-				},
-				root_dir = require("lspconfig").util.root_pattern("package.json", "tsconfig.json", ".git"),
-				single_file_support = true,
-			})
-			lspconfig.eslint.setup({
-				capabilties = capabilities,
-			})
-
 			require("lspconfig").clangd.setup({
 				cmd = {
 					"clangd",
@@ -323,28 +151,6 @@ return {
 
 			lspconfig.marksman.setup({
 				capabilties = capabilities,
-			})
-			lspconfig.gleam.setup({
-				capabilties = capabilities,
-			})
-			lspconfig.nim_langserver.setup({
-				capabilties = capabilities,
-			})
-			-- lspconfig.rust_analyzer.setup({
-			--   capabilties = capabilities,
-			--   filetypes = { "rust" },
-			--   root_dir = require("lspconfig").util.root_pattern("Cargo.toml", "src/*.rs"),
-			--   settings = {
-			--     ["rust_analyzer"] = {
-			--       cargo = {
-			--         allFeatures = true,
-			--       }
-			--     }
-			--   }
-			-- })
-			lspconfig.omnisharp.setup({
-				capabilties = capabilities,
-				cmd = { "OmniSharp" },
 			})
 		end,
 	},
