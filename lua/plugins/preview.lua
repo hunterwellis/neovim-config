@@ -17,11 +17,26 @@ return {
       file_types = { "markdown", "Avante" },
       latex = { enabled = false },
       completions = { blink = { enabled = true } },
-      -- anti_conceal = { enabled = false },
     },
     ft = { "markdown", "Avante" },
     config = function()
       vim.keymap.set("n", "<leader>md", require("render-markdown").toggle, { desc = "Toggle markdown render" } )
     end,
+  },
+  {
+  "sheerun/vim-polyglot",
+    lazy = false,
+    init = function()
+      vim.g.polyglot_disabled = "autoindent"
+    end
+  },
+  -- vimtex
+  {
+  "lervag/vimtex",
+    lazy = false,
+    init = function()
+      vim.g.vimtex_view_method = "zathura"
+      vim.g.vimtex_quickfix_ignore_filters = {'Underfull', 'Overfull', 'LaTeX Font Warning', 'Missing character'}
+    end
   },
 }

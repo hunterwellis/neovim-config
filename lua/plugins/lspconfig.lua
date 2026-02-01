@@ -86,16 +86,8 @@ return {
 			lspconfig.html.setup({
 				capabilities = capabilities,
 				filetypes = {
-					"templ",
 					"html",
-					"php",
 					"css",
-					"javascriptreact",
-					"typescriptreact",
-					"javascript",
-					"typescript",
-					"jsx",
-					"tsx",
 				},
 			})
 			require("lspconfig").clangd.setup({

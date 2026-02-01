@@ -36,7 +36,7 @@ return {
         enabled = false
       }
     })
-   end,
+  end,
   vim.keymap.set("n", "<leader>i", ":IBLToggle<CR>",
     { desc = "Line indent" })
 }
