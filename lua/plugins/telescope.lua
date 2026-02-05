@@ -13,13 +13,11 @@ return {
 			-- Setup
 			telescope.setup({
 				defaults = {
-					sorting_strategy = "ascending",
 					layout_config = {
 						anchor = "NE",
 						height = 0.99,
 						width = 0.66,
 						preview_width = 0.5,
-						prompt_position = "top",
 					},
 				},
 				extensions = {

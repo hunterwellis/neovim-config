@@ -29,6 +29,10 @@ vim.keymap.set("n", "<leader>rr", ":source .session.vim<CR>",
 vim.keymap.set("n", "<leader>dm", ":delmarks!<CR>",
 	{ desc = "delete marks" })
 
+-- escape terminal window
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>",
+	{ noremap = true })
+
 -- lsp errors
 vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>",
   { desc = "Expand diagnostic" })
